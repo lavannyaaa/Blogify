@@ -1,0 +1,409 @@
+
+body {
+    background-image: url(https://imgs.search.brave.com/GMGcFRUX7LKUaRTLPlB2K-lD5seyhWwLUyqNpUZ1Vvs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by93/aGl0ZS1zbW9rZS13/YWxscGFwZXItYWJz/dHJhY3QtZGVza3Rv/cC1iYWNrZ3JvdW5k/XzUzODc2LTEyODI2/Mi5qcGc_c2VtdD1h/aXNfaHlicmlk);
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.642);
+    z-index: 1000;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+    opacity: unset;
+}
+
+.logo {
+    height: 50px;
+}
+
+.container {
+    background-color: white;
+    background-blend-mode: overlay;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-top: 90px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Form elements */
+.form-group {
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.form-group:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.form-group:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.form-group:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    background: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Button styles */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: slideIn 0.5s ease-out 0.4s forwards;
+}
+
+button {
+    flex: 1;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+button:active::after {
+    animation: ripple 0.6s ease-out;
+}
+
+button.secondary {
+    background-color: #6c757d;
+}
+
+button.secondary:hover {
+    background-color: #545b62;
+}
+
+.share {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.share-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.fa-solid,
+.fa-brands {
+    font-size: 20px;
+}
+
+.copy-link {
+    color: white;
+    background: #474747;
+}
+
+.copy-link:hover {
+    color: #474747;
+    background: white;
+    border: 2px solid #474747;
+}
+
+.facebook {
+    color: #ffffff;
+    background: #0056b3;
+}
+
+.facebook:hover {
+    color: #0056b3;
+    background: white;
+    border: 2px solid #0056b3;
+}
+
+.whatsapp {
+    color: #ffffff;
+    background: #4fce5d;
+}
+
+.whatsapp:hover {
+    color: #4fce5d;
+    background: white;
+    border: 2px solid #4fce5d;
+}
+
+.footer {
+    left: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: #000000;
+    color: white;
+}
+
+.footer>p {
+    padding: 10px;
+    font-size: 12px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .share {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .share-btn {
+        height: 35px;
+        width: 35px;
+    }
+
+    .fa-solid,
+    .fa-brands {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+
+        padding: 5px;
+    }
+
+    .share {
+        gap: 5px;
+    }
+
+    .share-btn {
+        height: 30px;
+        width: 30px;
+    }
+
+    .fa-solid,
+    .fa-brands {
+        font-size: 16px;
+    }
+}
+
+
+/* Loading animation */
+#loading {
+    display: none;
+    text-align: center;
+    color: #007bff;
+    margin-top: 20px;
+}
+
+#loading::after {
+    content: '';
+    animation: dots 1.5s steps(5, end) infinite;
+}
+
+/* Blog entries */
+.blog-entry {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.blog-entry:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.blog-meta {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.back-button {
+    margin-bottom: 20px;
+}
+
+#generatedPost {
+    margin-top: 20px;
+    white-space: pre-wrap;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Page transitions */
+#generator-page,
+#user-page {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.page-exit {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.page-enter {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+
+    20% {
+        transform: scale(25, 25);
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(40, 40);
+    }
+}
+
+@keyframes dots {
+
+    0%,
+    20% {
+        content: '.';
+    }
+
+    40% {
+        content: '..';
+    }
+
+    60% {
+        content: '...';
+    }
+
+    80% {
+        content: '....';
+    }
+
+    100% {
+        content: '.....';
+    }
+}

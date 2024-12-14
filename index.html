@@ -1,0 +1,75 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/11859/11859354.png" type="image/x-icon">
+    <title>Blogify</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <img class="logo" src="Blogify.png" alt="Blogify">
+        <div class="share">
+            <p>Share Tool : </p>
+            <p><button class="share-btn copy-link" id="copyButton"><i class="fa-solid fa-link"></i></button></p>
+            <p><button class="share-btn facebook" onclick="shareOnFacebook()"><i
+                        class="fa-brands fa-facebook"></i></button></p>
+            <p><button class="share-btn whatsapp" onclick="shareOnWhatsApp()"><i
+                        class="fa-brands fa-whatsapp"></i></button></p>
+        </div>
+    </div>
+    <div class="container">
+        <div id="generator-page" style="display: block;">
+            <h1>Blog Generator</h1>
+            <div class="form-group">
+                <label for="topicInput">Blog Topic:</label>
+                <input type="text" id="topicInput" placeholder="Enter your blog topic" required />
+            </div>
+            <div class="form-group">
+                <label for="languageTone">Language Tone:</label>
+                <select id="languageTone">
+                    <option value="professional">Professional</option>
+                    <option value="casual">Casual</option>
+                    <option value="academic">Academic</option>
+                    <option value="conversational">Conversational</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="wordCount">Word Count:</label>
+                <select id="wordCount">
+                    <option value="150">150 words</option>
+                    <option value="300">300 words</option>
+                    <option value="500">500 words</option>
+                    <option value="1000">1000 words</option>
+                </select>
+            </div>
+            <div class="button-group">
+                <button onclick="generateBlogPost()">Generate Blog </button>
+                <button class="secondary" onclick="showUserPage()">View All Blogs</button>
+            </div>
+
+            <div id="loading">Generating Blog</div>
+            <div id="generatedPost"></div>
+        </div>
+
+        <div id="user-page" style="display: none;">
+            <button class="secondary back-button" onclick="showGeneratorPage()">Back to Generator</button>
+            <h1>My Generated Blogs</h1>
+            <div id="blog-history"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>copyright <i class="fa-regular fa-copyright"></i> Lavannya Deshpande 2024</p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
